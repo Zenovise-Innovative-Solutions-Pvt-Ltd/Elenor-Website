@@ -17,8 +17,8 @@ export const SITE = {
   pressEmail: 'press@elenor.studio',
   instagramUrl: process.env.NEXT_PUBLIC_INSTAGRAM_URL || null,
   // Studio WhatsApp line; the environment variable can override it per deploy.
-  whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 99243 96959').replace(/[^\d]/g, ''),
-  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 99243 96959',
+  whatsappNumber: (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 94277 94173').replace(/[^\d]/g, ''),
+  whatsappDisplay: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+91 94277 94173',
   ogImage: '/images/og-elenor.jpg',
   logo: { src: '/brand/elenor-professional.png', width: 779, height: 520 },
   // Horizontal emblem + wordmark lockup for the navigation, where the full

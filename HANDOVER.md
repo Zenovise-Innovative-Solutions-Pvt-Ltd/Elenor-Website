@@ -29,7 +29,7 @@ and `admins` tables are used by the current site.
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_FROM` | Optional | Only for non-Gmail providers (defaults: `smtp.gmail.com`, `465`, `SMTP_USER`). |
 | `N8N_WEBHOOK_URL` | Optional | Receives `inquiry.created` / `newsletter.subscribed` events. |
 | `NEXT_PUBLIC_INSTAGRAM_URL` | Optional | Official profile. Instagram links stay hidden until set. |
-| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Optional | Overrides the studio WhatsApp number (+91 99243 96959). |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Optional | Overrides the studio WhatsApp number (+91 94277 94173). |
 
 ### Gmail setup (enquiry emails)
 

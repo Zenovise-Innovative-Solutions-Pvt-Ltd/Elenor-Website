@@ -5,16 +5,15 @@ import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import CtaSection from '@/components/ui/CtaSection';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
-import PhilosophyGrid from '@/components/home/PhilosophyGrid';
 import ProductCard from '@/components/products/ProductCard';
 import { PRODUCTS } from '@/data/products';
 import { SITE } from '@/data/site';
 import JsonLd from '@/components/ui/JsonLd';
 import { graph, webPageJsonLd } from '@/lib/seo';
 
-const title = 'About Elenor — Our Story, Approach & Philosophy';
+const title = 'About ÈLENOR — Our Story, Philosophy, Vision & Promise';
 const description =
-  'Elenor began as a notebook of products we kept returning to. Discover our story, our approach to curation and the principles behind every piece.';
+  'ÈLENOR was founded by a hairstylist and salon entrepreneur with 25 years of salon experience to bring professional-inspired hair and skin care into everyday beauty routines.';
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -25,31 +24,17 @@ export const metadata: Metadata = {
 
 // Plain statements of fact — easy for readers, search and answer engines to quote.
 const AT_A_GLANCE = [
-  { term: 'What Elenor is', detail: 'A quiet beauty studio and a considered edit of beauty: curated houses and considered formulations.' },
-  { term: 'The collection', detail: 'Radiance Face Cream, Revive Serum and Velvet Matte Lipstick, with four further pieces in the making.' },
-  { term: 'Standards', detail: 'Every current product is paraben free and cruelty free; the cream and serum are dermatologically tested.' },
-  { term: 'Made in', detail: 'India, as stated on each pack.' },
-  { term: 'How to buy', detail: 'Elenor does not sell online or list prices — availability is by enquiry.' },
-  { term: 'Studio', detail: `${SITE.studio}. We reply to messages ${SITE.responseTime}.` },
-];
-
-const DISTINCT = [
   {
-    title: 'Fewer launches, better formulas',
-    body: 'We curate with a slower eye. A small shelf, refreshed slowly, so every piece earns its place.',
+    term: 'What ÈLENOR is',
+    detail: 'A beauty brand bringing professional-inspired hair and skin care into everyday beauty routines.',
   },
+  { term: 'Founded by', detail: 'A professional hairstylist and salon entrepreneur with 25 years of salon experience.' },
   {
-    title: 'We meet every house we carry',
-    body: 'Where it is made, who makes it, what they will not compromise on — or it does not make our shelf.',
+    term: 'Product categories',
+    detail: 'Shampoos, conditioners, hair serums and hair masks — with skin care and fragrance to follow.',
   },
-  {
-    title: 'Thoughtful packaging',
-    body: 'Glass, paper, ink, weight. The way a cap closes. We notice these things, because the brands we love do too.',
-  },
-  {
-    title: 'A real person answers',
-    body: 'Write to us and someone who uses these products daily will reply — personally, and without a script.',
-  },
+  { term: 'How to buy', detail: 'ÈLENOR does not sell online or list prices — availability is by enquiry.' },
+  { term: 'Contact', detail: `WhatsApp ${SITE.whatsappDisplay}. We reply to messages ${SITE.responseTime}.` },
 ];
 
 function Quote({ children, cite }: { children: React.ReactNode; cite?: string }) {
@@ -67,7 +52,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd data={graph(webPageJsonLd('AboutPage', '/about', title, description))} />
-      {/* Hero & story */}
+      {/* Hero */}
       <section className="pb-16 pt-28 sm:pt-32 md:pb-24 md:pt-40" aria-labelledby="page-title">
         <div className="container-x">
           <Breadcrumbs items={[{ label: 'About', href: '/about' }]} />
@@ -89,21 +74,24 @@ export default function AboutPage() {
               <SectionHeading
                 as="h1"
                 id="page-title"
-                eyebrow="About Elenor"
-                title="A quieter way to discover beauty."
+                eyebrow="About ÈLENOR"
+                title="Beauty Refined. Care Redefined."
                 align="left"
                 size="xl"
                 lead={
                   <>
-                    <p>
-                      Elenor began as a notebook of products we kept returning to. Over time it became a small studio: a
-                      way to bring the houses we trust to the people who value the same things — craft, restraint,
-                      intention.
+                    <p className="font-serif text-2xl italic text-ink">
+                      Born from Experience. Created for Transformation.
                     </p>
-                    <p className="mt-4 text-base text-muted">
-                      We curate beauty with a slower eye: fewer launches, better formulas, thoughtful packaging, and
-                      brands that feel personal instead of noisy. The goal is simple — to help you find products that
-                      stay on your shelf because they truly belong there.
+                    <p className="mt-4">
+                      ÈLENOR is more than a beauty brand — it is a vision shaped by years of hands-on salon experience,
+                      a deep understanding of hair and skin, and a passion for helping people look and feel their best.
+                    </p>
+                    <p className="mt-4">
+                      Founded by a professional hairstylist and salon entrepreneur with 25 years of salon experience,
+                      ÈLENOR was created with a clear purpose: to bring professional-inspired hair and skin care into
+                      everyday beauty routines through thoughtfully developed products that combine quality, care, and
+                      elegance.
                     </p>
                   </>
                 }
@@ -113,12 +101,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-y border-y border-line bg-surface" aria-label="From the founder's notebook">
-        <Quote cite="Founder’s notebook, 2024">“We choose less, slowly. The shelf is small on purpose.”</Quote>
+      <section className="section-y border-y border-line bg-surface" aria-label="Our belief">
+        <Quote>“At ÈLENOR, we believe that true beauty begins with care.”</Quote>
       </section>
 
-      {/* Approach */}
-      <section className="section-y" aria-labelledby="approach-heading">
+      {/* Our Story */}
+      <section className="section-y" aria-labelledby="story-heading">
         <div className="container-x grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-16">
           <Reveal className="md:order-2 md:col-span-6">
             <div className="image-hover relative aspect-[4/3] overflow-hidden rounded-sm bg-line/40">
@@ -133,19 +121,24 @@ export default function AboutPage() {
           </Reveal>
           <Reveal className="md:order-1 md:col-span-6" delay={100}>
             <SectionHeading
-              id="approach-heading"
-              eyebrow="Our approach"
-              title="We meet every house we carry."
+              id="story-heading"
+              eyebrow="Our Story"
+              title="Behind every beautiful transformation."
               align="left"
               lead={
                 <>
                   <p>
-                    Where they are made, who is making them, what they will not compromise on. If we cannot answer those
-                    questions honestly, the house does not make our shelf.
+                    Behind every beautiful transformation lies an understanding of what hair and skin truly need. Years
+                    of working closely with clients have taught our founder that beauty is not just about appearance —
+                    it is about healthy-looking hair, well-cared-for skin, confidence, and the experience of feeling
+                    your best.
                   </p>
-                  <p className="mt-4 text-base text-muted">
-                    The result is a small, slow, deliberate edit. It is also the reason a real person answers when you
-                    write to us.
+                  <p className="mt-4">This understanding became the inspiration for ÈLENOR.</p>
+                  <p className="mt-4">
+                    Our vision is to bridge the gap between professional salon care and everyday self-care, creating
+                    products that make premium beauty experiences more accessible. From shampoos, conditioners, hair
+                    serums, and hair masks to future innovations in skin care and fragrance, every product category
+                    reflects our commitment to elevating the way people care for themselves.
                   </p>
                 </>
               }
@@ -154,23 +147,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Philosophy & values */}
-      <section className="section-y satin-overlay border-y border-line bg-surface" aria-labelledby="values-heading">
-        <div className="container-x">
-          <Reveal>
-            <SectionHeading
-              id="values-heading"
-              eyebrow="Philosophy"
-              title="Beauty, properly considered."
-              lead="Three principles shape every decision at the studio — what we make, what we carry, and how we speak to you."
-            />
-          </Reveal>
-          <PhilosophyGrid />
-        </div>
-      </section>
-
-      {/* Craft */}
-      <section className="section-y" aria-labelledby="craft-heading">
+      {/* Our Philosophy */}
+      <section className="section-y satin-overlay border-y border-line bg-surface" aria-labelledby="philosophy-heading">
         <div className="container-x grid grid-cols-1 items-center gap-10 md:grid-cols-12 md:gap-16">
           <Reveal className="md:col-span-5">
             <div className="image-hover relative aspect-square max-w-sm overflow-hidden rounded-sm bg-line/40">
@@ -185,31 +163,54 @@ export default function AboutPage() {
           </Reveal>
           <Reveal className="md:col-span-7" delay={100}>
             <SectionHeading
-              id="craft-heading"
-              eyebrow="Craft"
-              title="The details, kept."
+              id="philosophy-heading"
+              eyebrow="Our Philosophy"
+              title="True beauty begins with care."
               align="left"
-              lead="Glass, paper, ink, weight. The way a cap closes. We notice these things, because the brands we love do too."
+              lead={
+                <>
+                  <p>At ÈLENOR, we believe that true beauty begins with care.</p>
+                  <p className="mt-4">
+                    We are committed to developing beauty solutions with a focus on quality, thoughtful formulation, an
+                    elevated user experience, and the evolving needs of modern consumers. We aspire to create products
+                    that fit seamlessly into everyday routines while bringing a touch of professional luxury to every
+                    moment of self-care.
+                  </p>
+                </>
+              }
             />
           </Reveal>
         </div>
       </section>
 
-      {/* What makes Elenor distinctive */}
-      <section className="pb-20 md:pb-28" aria-labelledby="distinct-heading">
-        <div className="container-x">
-          <Reveal>
-            <SectionHeading id="distinct-heading" eyebrow="What sets us apart" title="Small on purpose." />
+      {/* Our Vision & Our Promise */}
+      <section className="section-y" aria-label="Our vision and promise">
+        <div className="container-x grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <Reveal className="tile-hover rounded-xl border border-line bg-ivory/40 p-8 md:p-10">
+            <p className="font-serif text-4xl text-mauve/70">01</p>
+            <h2 id="vision-heading" className="mt-4 font-serif text-3xl leading-tight text-ink">
+              Our Vision
+            </h2>
+            <p className="mt-4 leading-relaxed text-ink/80">
+              To build a trusted, modern beauty brand that brings together professional experience, innovation, and
+              elegance — inspiring people to embrace healthier-looking hair, cared-for skin, and confidence in their own
+              beauty.
+            </p>
           </Reveal>
-          <ul className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
-            {DISTINCT.map((d, i) => (
-              <Reveal as="li" key={d.title} delay={i * 70} className="tile-hover rounded-xl border border-line bg-ivory/40 p-7">
-                <p className="font-serif text-4xl text-mauve/70">0{i + 1}</p>
-                <h3 className="mt-4 font-serif text-2xl leading-tight text-ink">{d.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink/75">{d.body}</p>
-              </Reveal>
-            ))}
-          </ul>
+          <Reveal className="tile-hover rounded-xl border border-line bg-ivory/40 p-8 md:p-10" delay={90}>
+            <p className="font-serif text-4xl text-mauve/70">02</p>
+            <h2 id="promise-heading" className="mt-4 font-serif text-3xl leading-tight text-ink">
+              Our Promise
+            </h2>
+            <p className="mt-4 leading-relaxed text-ink/80">
+              Every detail matters: the care behind a product, the experience it creates, and the confidence it
+              inspires.
+            </p>
+            <p className="mt-4 leading-relaxed text-ink/80">
+              ÈLENOR stands for a continuing journey of learning, innovation, and uncompromising dedication to the
+              beauty experience.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -217,7 +218,7 @@ export default function AboutPage() {
       <section className="pb-20 md:pb-28" aria-labelledby="glance-heading">
         <div className="container-x max-w-4xl">
           <Reveal>
-            <SectionHeading id="glance-heading" eyebrow="In brief" title="Elenor at a glance." />
+            <SectionHeading id="glance-heading" eyebrow="In brief" title="ÈLENOR at a glance." />
           </Reveal>
           <Reveal>
             <dl className="glass-card mt-12 divide-y divide-line rounded-2xl px-6 md:px-10">
@@ -252,13 +253,13 @@ export default function AboutPage() {
       </section>
 
       <section className="pb-20 md:pb-28" aria-label="Closing thought">
-        <Quote>“Beauty, properly considered, is a quiet form of care.”</Quote>
+        <Quote>ÈLENOR — Where Professional Experience Meets Everyday Luxury.</Quote>
       </section>
 
       <CtaSection
         eyebrow="Write to us"
         title="A real person reads every message."
-        body="Ask about a piece, arrange a studio visit by appointment, or simply say hello."
+        body="Ask about a product, arrange a studio visit by appointment, or simply say hello."
         primary={{ href: '/contact', label: 'Make an enquiry' }}
         secondary={{ href: '/lookbook', label: 'See the Lookbook' }}
       />

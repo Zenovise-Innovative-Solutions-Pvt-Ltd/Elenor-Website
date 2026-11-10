@@ -28,7 +28,7 @@ export function GET() {
     '',
     '## Pages',
     `- [Home](${absoluteUrl('/')}): introduction to Elenor and the collection`,
-    `- [About](${absoluteUrl('/about')}): story, approach to curation and philosophy`,
+    `- [About](${absoluteUrl('/about')}): founder story, philosophy, vision and promise`,
     `- [Products](${absoluteUrl('/products')}): the current collection and how enquiries work`,
     `- [Lookbook](${absoluteUrl('/lookbook')}): imagery and the pieces coming soon`,
     `- [FAQ](${absoluteUrl('/faq')}): answers about products, ingredients, availability and the studio`,
